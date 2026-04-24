@@ -151,48 +151,28 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 8%;
+            background: var(--bg-deep);
             opacity: 1;
             transform: none;
-            overflow: hidden;
-        }
-
-        .hero-branding {
-            background: var(--bg-deep);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 60px;
-            text-align: center;
-            border-right: 1px solid rgba(201, 168, 76, 0.2);
-        }
-
-        .hero-branding .logo-hero {
-            width: 80%;
-            max-width: 400px;
-            height: auto;
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: scale(0.9);
-            animation: heroReveal 1.2s forwards 0.3s;
-        }
-
-        .hero-image-side {
-            background: linear-gradient(rgba(13, 13, 13, 0.4), rgba(13, 13, 13, 0.4)), url('assets/pic5.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px;
         }
 
         .hero-content {
-            max-width: 600px;
-            text-align: left;
+            max-width: 900px;
+        }
+
+        .logo-hero {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: heroReveal 1.2s forwards 0.3s;
         }
 
         .hero h1 {
@@ -217,10 +197,12 @@
         .hero-btns {
             display: flex;
             gap: 20px;
+            justify-content: center;
             opacity: 0;
             transform: translateY(20px);
             animation: heroReveal 1s forwards 1.4s;
         }
+
 
         @keyframes heroReveal {
             to { opacity: 1; transform: translateY(0) scale(1); }
@@ -600,9 +582,6 @@
         /* Mobile Styles */
         @media (max-width: 992px) {
             .nav-links, .btn-survey { display: none; }
-            .hero { grid-template-columns: 1fr; height: auto; min-height: 100vh; }
-            .hero-branding { padding: 100px 20px 40px; border-right: none; border-bottom: 1px solid rgba(201, 168, 76, 0.2); }
-            .hero-image-side { padding: 60px 20px; }
             .services-grid, .sectors-grid, .testimonials-grid { grid-template-columns: 1fr; }
             .about-split { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -610,7 +589,7 @@
             .process-timeline::after { display: none; }
             .step { margin-bottom: 60px; }
             .section-header h2 { font-size: 3rem; }
-            .hero h1 { font-size: 3rem; }
+            .hero h1 { font-size: 2.8rem; }
         }
 
         @media (max-width: 600px) {
@@ -638,20 +617,13 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-branding">
+        <div class="hero-content">
             <img src="assets/logo.png" alt="Frontline Security Consulting" class="logo-hero">
-            <div class="hero-trust">
-                <span style="color: var(--accent); letter-spacing: 2px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">✓ SIA Licensed & Insured</span>
-            </div>
-        </div>
-        <div class="hero-image-side">
-            <div class="hero-content">
-                <h1>Protecting What Matters Most.</h1>
-                <p>Professional physical security consultants serving London and the South East with tailored, high-integrity protection.</p>
-                <div class="hero-btns">
-                    <a href="tel:07771214577" class="btn btn-primary">Book a Survey</a>
-                    <a href="#services" class="btn btn-outline">Our Services</a>
-                </div>
+            <h1>Protecting What Matters Most.</h1>
+            <p style="text-shadow: none; color: var(--text-muted);">Professional physical security consultants serving London and the South East with tailored, high-integrity protection.</p>
+            <div class="hero-btns">
+                <a href="tel:07771214577" class="btn btn-primary">Book a Survey</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
             </div>
         </div>
     </section>
